@@ -1,0 +1,19 @@
+[user]
+	name = zhanglihuan
+	email = lihuanz@student.unimelb.edu.au
+
+[alias]
+	lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+	
+	new = "!f() { git fetch && git checkout -b feature/`whoami`/`date +%m-%d`/${2:-`date +%H-%M`} origin/${1:-master}; }; f"
+	rvm = "!f() { git push origin HEAD:refs/for/master%${1}; }; f"
+	rv = "!f() { git push origin HEAD:refs/for/${1:-master}%${2}; }; f"	
+	fp = "!f() { git fetch origin refs/changes/$(printf "%02d" $(expr ${1} % 100))/${1}/${2:-1} && git checkout FETCH_HEAD;}; f"
+	cin = commit --amend --no-edit
+	delb = "!f() {git branch | grep feature | xargs git branch -D; }; f"
+
+
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	publish = "!git push -u origin $(git branch-name)"
+	unpublish = "!git push origin :$(git branch-name)"
+	
