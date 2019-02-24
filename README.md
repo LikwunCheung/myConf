@@ -1,2 +1,5 @@
 # myConf
-My configuration
+tmux configuration
+git configuration
+zsh configuration
+vim configuration
