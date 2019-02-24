@@ -1,0 +1,2 @@
+# myConf
+My configuration
